@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Page Header -->
+      <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/covid.png') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>COVID-19 Predictor</h1>
+              <span class="subheading">Check your probablity in percentage of having COVID-19.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Please fill in the symptoms you have.</p>
+          <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+          <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+          <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+          <form name="sentMessage" id="contactForm" novalidate action = "/" method = "POST">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Fever</label>
+                <input type="text" class="form-control" placeholder="Fever" id="fever" name ='fever' required data-validation-required-message="Please enter your name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Age</label>
+                <input type="text" class="form-control" placeholder="Age" id="Age" name ="age" required data-validation-required-message="Please enter your email address.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Dry Cough</label>
+                <input type="text" class="form-control" placeholder="Dry Cough from -1 to 1" id="cough" name ="cough" required data-validation-required-message="Please enter your phone number.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Tiredness</label>
+                <input type="text" class="form-control" placeholder="Tiredness either 0 or 1" id="tiredness" name ="tiredness"required data-validation-required-message="Please enter a message.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Body Pain</label>
+                <input type="text" class="form-control" placeholder="Body Pain either 0 or 1" id="pain" name ="pain"required data-validation-required-message="Please enter a message.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Sore Throat</label>
+                <input type="text" class="form-control" placeholder="Sore Throat from -1 to 1" id="throat" name ="throat"required data-validation-required-message="Please enter a message.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Shortness of Breath</label>
+                <input type="text" class="form-control" placeholder="Shortness of Breath either 0 or 1" id="breath" name ="breath"required data-validation-required-message="Please enter a message.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+   {% endblock %}
